@@ -33,7 +33,8 @@ class Login extends CI_Controller {
                 $data = array(
                     'is_logged' => TRUE,
                     //'user_id' => $user_info['user_id']
-                    'user_id' => 16
+                    'user_id' => 16,
+                    'role'=>$user_info['role']
                     );
                 $this->session->set_userdata($data);
                 redirect('dashboard');
