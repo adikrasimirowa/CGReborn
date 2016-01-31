@@ -11,10 +11,16 @@
                 <div class="row">
                    <div class="col-md-4" >
    <div class="panel panel-primary">
-    <div class="panel-heading">Промени :<?php echo " $doi[profile]"; ?></div>
+    <div class="panel-heading">Промени :<?php echo " $doi[profile_short]"; ?></div>
      <div class="panel-body">
      <?php  echo form_open('doi/update_single_doi'); 
 echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); 
+  $profile_short=array(
+  'type'=>'text',
+  'class'=>'form-control',
+  'name'=>'profile_short',
+  'value'=>"$doi[profile_short]");
+
  $profile=array(
   'type'=>'text',
   'class'=>'form-control',
@@ -42,13 +48,39 @@ echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'
  $submit=array(
   'type'=>'submit',
   'name'=>'submit_button',
-  'value'=>"Промени");
+  'value'=>"Редактирай");
 ?>
-      <label>Профил</label><?php echo form_input($profile); ?> </br>
-
+      <label>Профил</label><?php echo form_input($profile_short); ?> </br>
+      <label>Описание</label><?php echo form_input($profile); ?> </br>
       <label>Критерия : </label><?php  echo form_input($criteria); ?> </br>
-      <label>Клас : </label><?php  echo form_input($class); ?> </br>
-      <label>Предмет : </label><?php  echo form_input($subject); ?> </br>
+      
+    </label><?php  
+   echo "
+      <label>Клас : </label>
+      <select name='class' class='form-control'>";
+ echo "<option value='$doi[class]'>$doi[class]</option>";
+$i = 0;
+while($i < count($n_class)){
+  $val= $n_class[$i]['value'];
+  $des = $n_class[$i]['n_class'];
+  echo "<option value='$i'> $des</option>";
+  $i++;
+}
+      echo "</select>";
+
+echo "<label>Предмет : </label>
+<select name='subject' class='form-control'>";
+ echo "<option value='$doi[subject_type]'>$doi[subject_type]</option>";
+$i = 0;
+while($i < count($n_subject)){
+  $val= $n_subject[$i]['value'];
+  $des = $n_subject[$i]['subject_type'];
+  echo "<option value='$i'>$des</option>";
+  $i++;
+}
+echo "</select>"; 
+
+ ?> </br>
  <br/>
         <button type="submit" class="btn btn-primary">Редактирай</button>
 <?php 
