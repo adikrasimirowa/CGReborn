@@ -122,7 +122,7 @@
                                                 <td>'.$value['phone'].'</td>
                                                 <td>'.$value['email'].'</td>
                                                 <td><a href="'.base_url().'index.php/user/update_teacher/'.$value['user_id'].'"><button class="btn btn-warning">Редактирай</button></a></td>
-                                                <td><button class="btn btn-danger" data-href="'.base_url().'index.php/user/delete_teacher/'.$value['user_id'].'" data-toggle="modal" data-target="#confirm-delete">Изтрий</button></td>
+                                                <td><button class="btn btn-danger" data-href="'.base_url().'index.php/user/delete_teacher/'.$value['user_id'].'" data-toggle="modal" data-target="#confirm-delete"> <span class="glyphicon glyphicon-trash"></span> Изтрий</button></td>
                                                 </tr>';
                                                 $br++;
                                             }
