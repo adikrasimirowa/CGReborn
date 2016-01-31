@@ -3,7 +3,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
-                            Добави на Клас
+                            Добави Клас
                         </h1>
                     </div>
                 </div>
