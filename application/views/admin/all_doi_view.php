@@ -1,4 +1,4 @@
-              <div id="page-wrapper">
+                  <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
@@ -56,7 +56,7 @@
                         <td> $value[class] </td>
                 <td class='text-center'>
                 <a class='btn btn-info' href='show_single_doi/$value[doi_id]' ><span class='glyphicon glyphicon-edit'></span> Редактирай</a> 
-               </td> <td>  <button class='btn btn-danger' data-href='".base_url()."index.php/doi/delete/".$value['doi_id']."' data-toggle='modal' data-target='#confirm-delete'>Изтрий</button></td></td>      
+               </td> <td>  <button class='btn btn-danger' data-href='".base_url()."index.php/doi/delete/".$value['doi_id']."' data-toggle='modal' data-target='#confirm-delete'><span class='glyphicon glyphicon-trash'></span> Изтрий</button></td></td>      
             </tr> "; 
         }
             ?>
