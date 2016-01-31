@@ -20,6 +20,7 @@
     
         <tr>
             <th>Профил</th>
+            <th>Описание</th>
             <th>Критерия</th>
              <th>Предмет</th>
               <th>Клас</th>
@@ -29,6 +30,7 @@
           <?php foreach ($all_doi as $key => $value) 
           {
             echo "<tr>
+                <td> $value[profile_short]</td>
                 <td> $value[profile]</td>
                 <td> $value[criteria] </td>
                         <td> $value[subject_type] </td>
