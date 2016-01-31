@@ -18,8 +18,9 @@
                                 <h4>Сигурни ли сте, че искате да изтриете администратор?</h4>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Откажи</button>
-                                <a class="btn btn-danger btn-ok">ИЗТРИЙ</a>
+                          <td><button class="btn btn-danger" data-href="'.base_url().'index.php/user/delete_admin/'.$value['user_id'].'" data-toggle="modal" data-target="#confirm-delete">
+                                  <span class="glyphicon glyphicon-trash"></span> Изтрий</button></td>
+
                             </div>
                         </div>
                     </div>
