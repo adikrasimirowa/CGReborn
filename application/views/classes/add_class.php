@@ -8,81 +8,51 @@
                     </div>
                 </div>
                 <!-- /. ROW  -->
-                <div class="col-lg-12">
+                 <div class="row">
+                   
+            <div class="col-lg-11">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                                    <div class="table-responsive">
+
+                
                     <?php
-                     echo validation_errors();
-    $this->output->enable_profiler(TRUE);
-    $this->benchmark->mark('code_start');
-     echo form_open('classes/insert_new_class');
-     //Dropdown за класа
-     echo "Клас";
-     echo "<select name='class' class='form-control'>";
-     echo "<option value=''></option>";
-    $i = 0;
-    while($i <= count($n_class)){
-      $val= $n_class[$i]['value'];
-      $des = $n_class[$i]['n_class'];
-      echo "<option value='$i'>$des</option>";
-      $i++;
-    }
-    echo "</select>";
-    //Dropdown за паралелката
-    echo "Паралелка";
-    echo "<select name='classs' class='form-control'>";
-    echo "<option value=''></option>";
-    $i = 0;
-    while($i < count($n_class_classes)){
-      $val= $n_class_classes[$i]['value'];
-      $des = $n_class_classes[$i]['class_class'];
-      echo "<option value='$i'>$des</option>";
-      $i++;
-    }
-    echo "</select>";
-    //Dropdown за учебната година
-    echo "Учебна година";
-    echo "<select name='school_year' class='form-control'>";
-    echo "<option value=''></option>";
-    $i = 0;
-    while($i < count($n_year)){
-      $val= $n_year[$i]['value'];
-      $des = $n_year[$i]['year'];
-      echo "<option value='$i'>$des</option>";
-      $i++;
-    }
-    echo "</select>";
-    //Dropdown за класен пъководител
-    echo "Класен пъководител";
-    echo "<select name='leader_teacher' class='form-control'>";
-    echo "<option value=''></option>";
-    $i = 0;
-    while($i < count($leader_teacher)){
-      $val= $leader_teacher[$i]['value'];
-      $des = $leader_teacher[$i]['firstname'];
-      $des2 = $leader_teacher[$i]['lastname'];
-      echo "<option value='$leader_teacher[$i]['teacher_id']'>$des $des2</option>";
-      $i++;
-    }
-    echo "</select>";
-    $submit=array(
-        'type'=>'submit',
-        'name'=>'send',
-        'value'=>'Готово!!!'
-    );
-     $num=array(
-    'type'=>'text',
-    'name'=>'num');
-    echo "Брой на учениците";
-    echo form_input($num);
+                    $n=1;
+                    $br=1;
+                    echo "<thead>
+                    <table class='table table-striped table-bordered table-hover custab'>";
+                    echo "<tr>
+                        <td>#</td>
+                        <td>Клас</td>
+                        <td>Паралелка</td>
+                        <td>Учебан година</td>
+                        <td>Ученици</td>
+                        </tr>
+                        </thead>";
+                    foreach ($show_classes as $key => $value) {
+                       echo '<tr>
+                        <td>'.$n.'</td>
+                        <td>'.$value['n_class'].'</td>
+                        <td>'.$value['class_class'].'</td>
+                        <td>'.$value['year'].'</td>
+                       <td><a href="'.base_url().'index.php/classes/show_students_info/'.$value['class_id'].'"><button class="btn btn-info">Покажи</button></a></td>
+                        </tr>';
+                       $n++;
+                    }
+                    echo "</table>";
 
 
+                    ?>
+                    
+                         </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
 
-
-    echo form_input($submit);
-    $this->benchmark->mark('code_end');
-    echo $this->benchmark->elapsed_time('code_start','code_end');
-
-?>
-                     </div>
         <!-- /. PAGE WRAPPER  -->
 <script type="text/javascript">
     $(document).ready(function(){
